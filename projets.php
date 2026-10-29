@@ -13,9 +13,17 @@ $projets = [
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+        <a href="index.php">Accueil</a> |
+        <a href="etudiants.php">Étudiants</a> |
+        <a href="projets.php">Projets</a>
+    </nav>
     <h1>Liste des projets</h1>
     <table border="1" cellpadding="6">
+        <thead>
         <tr><th>ID</th><th>Titre</th><th>Responsable</th><th>Statut</th></tr>
+        </thead>
+        <tbody>
         <?php foreach ($projets as $p): ?>
         <tr>
             <td><?= $p["id"] ?></td>
@@ -24,6 +32,7 @@ $projets = [
             <td><?= htmlspecialchars($p["statut"]) ?></td>
         </tr>
         <?php endforeach; ?>
+        </tbody>
     </table>
     <p><a href="index.php">← Accueil</a></p>
 </body>
