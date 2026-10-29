@@ -3,9 +3,9 @@
 
 // Définition d'un tableau PHP contenant 3 étudiants
 $etudiants = [
-    ["id" => 1, "nom" => "E", "prenom" => "Mohammed", "filiere" => "ISI"],
-    ["id" => 2, "nom" => "Bennani", "prenom" => "Fatima", "filiere" => "ISI"],
-    ["id" => 3, "nom" => "Tazi", "prenom" => "Youssef", "filiere" => "ISI"]
+    ["id" => 1, "nom" => "Elkasra", "prenom" => "Nour", "filiere" => "ISI"],
+    ["id" => 2, "nom" => "Beddach", "prenom" => "Houda", "filiere" => "ISI"],
+    ["id" => 3, "nom" => "Moufid", "prenom" => "Nouhaila", "filiere" => "ISI"]
 ];
 ?>
 <!DOCTYPE html>
@@ -13,12 +13,8 @@ $etudiants = [
 <head>
     <meta charset="UTF-8">
     <title>Liste des Étudiants - ISI Student Manager</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #f4f4f4; }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <h1>Liste des Étudiants</h1>
@@ -36,13 +32,14 @@ $etudiants = [
         <tbody>
             <?php foreach ($etudiants as $etudiant): ?>
                 <tr>
-                    <td><?php echo $etudiant['id']; ?></td>
-                    <td><?php echo $etudiant['nom']; ?></td>
-                    <td><?php echo $etudiant['prenom']; ?></td>
-                    <td><?php echo $etudiant['filiere']; ?></td>
+                    <td><?= $etudiant['id'] ?></td>
+                    <td><?= htmlspecialchars($etudiant['nom']) ?></td>
+                    <td><?= htmlspecialchars($etudiant['prenom']) ?></td>
+                    <td><?= htmlspecialchars($etudiant['filiere']) ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
+    <p><a href="index.php">← Accueil</a></p>
 </body>
 </html>
